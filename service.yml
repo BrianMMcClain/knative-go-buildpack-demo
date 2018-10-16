@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
-  name: knative-buildpack-demo
+  name: knative-go-buildpack-demo
   namespace: default
 spec:
   runLatest:
@@ -17,6 +17,10 @@ spec:
           arguments:
           - name: IMAGE
             value: docker.io/brianmmcclain/knative-go-buildpack-demo:latest
+          - name: BUILDPACK_ORDER
+            value: https://github.com/cloudfoundry/go-buildpack.git
+          - name: SKIP_DETECT
+            value: "true"
       revisionTemplate:
         spec:
           container:
