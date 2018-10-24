@@ -8,7 +8,7 @@ import (
 
 func handlePost(rw http.ResponseWriter, req *http.Request) {
 	// Say Hello!
-	fmt.Fprintf(rw, "%s", "Hello from Go Buildpack!")
+	fmt.Fprintf(rw, "%s", "Hello from the Go Buildpack!")
 }
 
 func main() {
