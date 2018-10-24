@@ -14,6 +14,9 @@ spec:
             revision: master
         template:
           name: buildpack
+          env:
+          - name: GOPACKAGENAME
+            value: "knative-go-buildpack-demo"
           arguments:
           - name: IMAGE
             value: docker.io/brianmmcclain/knative-go-buildpack-demo:latest
